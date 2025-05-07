@@ -1,12 +1,30 @@
-# React + Vite
+# Beth’s Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a personal portfolio website built with Vite, React, and modern JavaScript. It showcases my full-stack work, including a continuously scrolling tech-icon carousel, and includes Home, About, and Contact pages.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Project Overview
 
-## Expanding the ESLint configuration
+- **Purpose:** Present my skills, projects, and contact information in a clean, responsive single-page application.  
+- **Key Feature:** A continuously looping carousel of tech icons that highlights my core stack and tools.  
+- **Pages:** Home, About, Contact (using React Router for client-side routing).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Built With
+
+- **JavaScript (ES6+)**  
+- **React** (with JSX and Hooks)  
+- **Vite** for fast development and optimized production builds  
+- **React Router** for page navigation  
+- **CSS** (global `index.css` + component-scoped `.css` files)
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/BSharpDevon/beth-full-stack-website.git
+   cd beth-full-stack-website
