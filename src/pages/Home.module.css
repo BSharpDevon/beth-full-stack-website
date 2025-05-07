@@ -1,0 +1,55 @@
+/* src/pages/Home.module.css */
+
+/* 1) Page wrapper: full viewport height, vertical layout */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 2) Header wrapper: centered content with 3D perspective */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  perspective: 800px;
+}
+
+/* 3) Avatar: circular, centered, with hover flip and shadow */
+.avatar {
+  width: 150px;              /* match original size */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;     /* center + bottom spacing */
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+.avatar:hover {
+  transform: scale(1.2) rotateY(360deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* shadow like a coin */
+}
+
+/* 4) Title and subtitle styling */
+.title {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+.subtitle {
+  font-size: 1rem;
+  color: var(--highlight);
+  margin: 0;
+}
+
+/* 5) Main content placeholder (fills between header & carousel) */
+.main {
+  flex: 1;
+}
+
+/* 6) Carousel section pinned to bottom */
+.carousel {
+  margin-top: auto;          /* push down in the flex column */
+  padding: 2rem 0;           /* optional spacing */
+}

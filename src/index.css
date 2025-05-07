@@ -1,5 +1,9 @@
+/* src/index.css */
+
+/* 1) Google Font import must come first */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
+/* 2) CSS variables & base styles */
 :root {
   --text-color:   #EEF4F8;
   --bg-color:     #091819;
@@ -38,17 +42,7 @@ a {
   text-decoration: none;
 }
 
-.home-page,
-.about-page,
-.contact-page {
-  padding: 2rem;
-  text-align: center;
-}
-
+/* Utility helpers */
 .text-center {
   text-align: center;
-}
-
-.mt-5 {
-  margin-top: 3rem;
 }
