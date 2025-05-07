@@ -50,10 +50,14 @@ const IconCarousel = () => {
 
     // moveIcons: moves the carousel and loops it back to start
     const moveIcons = () => {
-      scrollContainer.scrollLeft += scrollSpeed;
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-        scrollContainer.scrollLeft = 0;
+       // advance by speed
+      let next = scrollContainer.scrollLeft + scrollSpeed;
+      // once we cross halfway, wrap around by subtracting the clone width
+      const wrapPoint = scrollContainer.scrollWidth / 2;
+      if (next >= wrapPoint) {
+        next -= wrapPoint;
       }
+      scrollContainer.scrollLeft = next;
       animationFrameId = requestAnimationFrame(moveIcons);
     };
 
