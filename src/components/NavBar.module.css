@@ -1,0 +1,61 @@
+/* src/components/NavBar.module.css */
+
+.navbar {
+    background-color: #10282A;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand {
+    font-family: 'IMFellEnglish', serif;
+    font-size: 1.5rem;
+    color: #EEF4F8;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .brand:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .link {
+    color: #EEF4F8;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: #FFCA0B;
+    transition: width 0.2s;
+  }
+  .link:hover {
+    color: #FFCA0B;
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+  .link:hover::after {
+    width: 100%;
+  }
+  

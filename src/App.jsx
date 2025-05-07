@@ -1,28 +1,32 @@
-import { Routes, Route, Link } from 'react-router-dom';
+// src/App.jsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
-function App() {
+/**
+ * App component: wraps the entire application, sets up navigation and page routing.
+ */
+export default function App() {
   return (
-    <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark p-3">
-        <div className="container">
-          <Link className="navbar-brand" to="/">Beth</Link>
-          <div>
-            <Link className="nav-link d-inline text-white me-3" to="/">Home</Link>
-            <Link className="nav-link d-inline text-white me-3" to="/about">About</Link>
-            <Link className="nav-link d-inline text-white" to="/contact">Contact</Link>
-          </div>
-        </div>
-      </nav>
+    // Overall layout container for the app
+    <div className="app-layout">
+      {/* Site navigation bar at the top */}
+      <NavBar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      {/* Main content area where routed pages render */}
+      <main className="app-content">
+        <Routes>
+          {/* Route for the Home page */}
+          <Route path="/" element={<Home />} />
+          {/* Route for the About page */}
+          <Route path="/about" element={<About />} />
+          {/* Route for the Contact page */}
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
     </div>
   );
 }
-export default App;
