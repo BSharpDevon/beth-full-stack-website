@@ -5,6 +5,8 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 /**
  * App component: wraps the entire application, sets up navigation and page routing.
