@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
-  // Form status: idle → sending → sent/error
+  // Form status: idle to sending to sent/error
   const [status, setStatus] = useState('idle');
 
   const handleSubmit = async (e) => {
@@ -38,7 +38,7 @@ export default function Contact() {
         <h1>Contact Me</h1>
 
         {status === 'sent' ? (
-          <p className={styles.thanks}>🎉 Thanks! I’ll get back to you soon.</p>
+          <p className={styles.thanks}>Thanks so much! I’ll get back to you soon.</p>
         ) : (
           <form onSubmit={handleSubmit} className={styles.form}>
             <label>

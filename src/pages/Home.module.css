@@ -1,13 +1,13 @@
 /* src/pages/Home.module.css */
 
-/* 1) Page layout: full-height, vertical stack */
+/* Page layout */
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* 2) Header: center all items */
+/* 2) Header: center everything*/
 .header {
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
   margin-top: 3rem;
 }
 
-/* 3) Avatar: 300×300px circle with silver border, spins once on load */
+/* Profile picture: 300×300px circle with silver border, spins once on load */
 .avatar {
   width: 300px;               
   height: 300px;
@@ -29,20 +29,20 @@
   animation: spinOnce 3s cubic-bezier(0.33,1,0.68,1) both;
 }
 
-/* 4) spinOnce keyframes: 5 full rotations (360°×5) */
+/* spinOnce keyframes: 5 full rotations (360°×5) */
 @keyframes spinOnce {
   0%   { transform: scale(1) rotateY(0deg); }
   100% { transform: scale(1) rotateY(1800deg); }
 }
 
-/* 5) Title: slide up on load */
+/* Title: slide up on load */
 .title {
   font-size: 2.5rem;
   margin: 0.5rem 0;
   animation: slideInUp 0.6s ease-out both;
 }
 
-/* 6) Subtitle: slide up with slight delay */
+/* Subtitle: slide up with slight delay */
 .subtitle {
   font-size: 1rem;
   color: var(--highlight);
@@ -57,7 +57,7 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* 7) Get in touch button */
+/* Get in touch button */
 .ctaButton {
   margin-top: 2rem;
   padding: 0.75rem 1.5rem;
@@ -76,12 +76,12 @@
   cursor: pointer;
 }
 
-/* 8) Main placeholder grows to fill space */
+/* Main placeholder grows to fill space */
 .main {
   flex: 1;
 }
 
-/* 9) Carousel sits at the bottom */
+/* Carousel sits at the bottom */
 .carousel {
   margin-top: auto;
   padding: 2rem 0;

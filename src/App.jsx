@@ -9,7 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 /**
- * App component: wraps the entire application, sets up navigation and page routing.
+ * Wraps site and sets up navigation and page routing.
  */
 export default function App() {
   return (

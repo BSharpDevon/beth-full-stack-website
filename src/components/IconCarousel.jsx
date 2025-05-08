@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './IconCarousel.css';  
 
 // --- ICONS ---
-// Array of objects defining each icon's URL and accessible name.
+// Array of objects for each icon's URL and accessible name.
 const ICONS = [
   { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg', alt: 'JavaScript' },
   { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg', alt: 'HTML5' },
@@ -22,7 +22,7 @@ const ICONS = [
 ];
 
 /**
- * A continuously scrolling carousel of tech icons.
+ * A continuously scrolling carousel of icons.
  * Duplicates icons to fill space and loops infinitely.
  */
 const IconCarousel = () => {
