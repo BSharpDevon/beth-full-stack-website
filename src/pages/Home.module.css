@@ -1,55 +1,93 @@
 /* src/pages/Home.module.css */
 
-/* 1) Page wrapper: full viewport height, vertical layout */
+/* 1) .page: makes the page fill your screen top-to-bottom and stack header, main area, and carousel vertically */
 .page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex;            /* turn this into a flex container */
+  flex-direction: column;   /* stack children vertically */
+  min-height: 100vh;        /* ensure it’s at least as tall as the browser window */
 }
 
-/* 2) Header wrapper: centered content with 3D perspective */
+/* 2) .header: center everything in the top section */
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 3rem;
-  perspective: 800px;
+  display: flex;            
+  flex-direction: column;   /* stack the image, title, subtitle */
+  align-items: center;      /* center horizontally */
+  text-align: center;       /* center text under the image */
+  margin-top: 3rem;         /* space from the very top */
 }
 
-/* 3) Avatar: circular, centered, with hover flip and shadow */
+/* 3) .avatar: your profile picture styling and animations */
 .avatar {
-  width: 150px;              /* match original size */
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1.5rem;     /* center + bottom spacing */
-  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
-  transform-style: preserve-3d;
+  width: 300px;             /* make the picture 300px wide (double of 150px) */
+  height: 300px;            /* make it 300px tall */
+  border-radius: 50%;       /* crop it into a circle */
+  object-fit: cover;        /* make sure it fills the circle without stretching */
+  margin-bottom: 1.5rem;    /* space under the picture */
+
+  /*
+    animation: [popIn] then [spinOnce]
+    • popIn 0.8s ease-out both: fades in and grows from tiny to full size over 0.8 seconds
+    • spinOnce 3s ease-out both 0.8s: spins around many times over 3 seconds,
+      then slows down naturally (ease-out), starting right after popIn finishes (0.8s delay)
+    
+    To change how many spins:
+      – Look at spinOnce keyframes below (3600deg = 10 spins).
+      – e.g. for 5 spins, use 360deg*5 = 1800deg.
+    
+    To change spin speed:
+      – Adjust “3s” to a larger (slower) or smaller (faster) value.
+  */
+  animation: spinOnce 3s cubic-bezier(0.33,1,0.68,1) both 0.8s;
 }
+
+/* 3b) When you hover over the picture, run the spinOnce animation again */
 .avatar:hover {
-  transform: scale(1.2) rotateY(360deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* shadow like a coin */
+  animation: spinOnce 3s cubic-bezier(0.33,1,0.68,1) both;
 }
 
-/* 4) Title and subtitle styling */
+/* popIn: fade and grow */
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.3); }  /* invisible and small */
+  70%  { opacity: 1; transform: scale(1.1); }  /* slightly bigger than final */
+  100% { opacity: 1; transform: scale(1); }    /* final full size */
+}
+
+/* spinOnce: single continuous spin */
+/* 3600deg = 10 full rotations; change this number to control spin count */
+@keyframes spinOnce {
+  0%   { transform: scale(1) rotateY(0deg); }     /* start facing you */
+  100% { transform: scale(1) rotateY(1800deg); }  /* end after rotating 3600° */
+}
+
+/* 4) .title: your big heading slides up into view */
 .title {
-  font-size: 2.5rem;
-  margin: 0.5rem 0;
+  font-size: 2.5rem;               /* size of the text */
+  margin: 0.5rem 0;                /* space above/below */
+  animation: slideInUp 0.6s ease-out both; /* uses slideInUp below */
 }
+
+/* 5) .subtitle: smaller heading, slides up after the title */
 .subtitle {
-  font-size: 1rem;
-  color: var(--highlight);
-  margin: 0;
+  font-size: 1rem;                         /* normal text size */
+  color: var(--highlight);                 /* your highlight color */
+  margin: 0;                                /* no extra space */
+  animation: slideInUp 0.6s ease-out both;  /* same slide animation */
+  animation-delay: 0.2s;                    /* wait 0.2s before starting */
 }
 
-/* 5) Main content placeholder (fills between header & carousel) */
+/* slideInUp: moves element from below into place */
+@keyframes slideInUp {
+  0%   { opacity: 0; transform: translateY(20px); } /* start invisible, 20px down */
+  100% { opacity: 1; transform: translateY(0); }    /* end visible, in position */
+}
+
+/* 6) .main: takes up leftover space between header and carousel */
 .main {
-  flex: 1;
+  flex: 1;        /* grow this area to fill space */
 }
 
-/* 6) Carousel section pinned to bottom */
+/* 7) .carousel: stays at the bottom of the page */
 .carousel {
-  margin-top: auto;          /* push down in the flex column */
-  padding: 2rem 0;           /* optional spacing */
+  margin-top: auto;  /* push it to the bottom */
+  padding: 2rem 0;   /* vertical space around it */
 }

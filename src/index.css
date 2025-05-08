@@ -1,31 +1,55 @@
 /* src/index.css */
 
-/* 1) Google Font import must come first */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+/* 1) Google Font imports must come first */
+/*    - Josefin Sans for body text */
+/*    - IM Fell English for your brand/logo */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=IM+Fell+English:ital,wght@0,400;1,400&display=swap');
 
 /* 2) CSS variables & base styles */
 :root {
   --text-color:   #EEF4F8;
   --bg-color:     #091819;
   --highlight:    #FFCA0B;
+  --font-sans:    'Josefin Sans', sans-serif;
+  --font-serif:   'IM Fell English', serif;
 }
 
+/* 3) Make box-sizing easier to work with everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 4) Smooth scrolling for anchor links (optional) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 5) Body resets and background */
 body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
-  background-image: url('./assets/images/background.svg');
+  /* ensure this path matches where you actually store the SVG */
+  background-image: url('/assets/images/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--text-color);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
+/* 6) Headings & paragraphs default spacing */
 h1, h2, p {
   margin: 0 0 1rem;
 }
 
+/* 7) Heading sizes & font choices */
 h1 {
   font-size: 2.5rem;
+  /* Use your serif brand font for big headers */
+  font-family: var(--font-serif);
 }
 
 h2 {
@@ -37,12 +61,13 @@ p {
   line-height: 1.5;
 }
 
+/* 8) Link styling */
 a {
   color: var(--highlight);
   text-decoration: none;
 }
 
-/* Utility helpers */
+/* 9) Utility helpers */
 .text-center {
   text-align: center;
 }
