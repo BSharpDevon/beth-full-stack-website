@@ -18,7 +18,7 @@ const ICONS = [
   { src: 'https://th.bing.com/th/id/OIP.CU2n8qa9znurAAjVy_jLYwAAAA?rs=1&pid=ImgDetMain', alt: 'CodePen' },
   { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original-wordmark.svg', alt: 'Postman' },
   { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg', alt: 'VS Code' },
-  { src: 'https://www.liblogo.com/img-logo/fi441f906-figma-logo-figma-logo-png-transparent-amp-svg-vector-freebie-supply.png', alt: 'Figma' }
+  { src: 'https://th.bing.com/th/id/OIP.jYcja5Jg64PLcKLvs6fBRwHaED?rs=1&pid=ImgDetMain', alt: 'Figma' }
 ];
 
 /**

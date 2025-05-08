@@ -1,0 +1,89 @@
+/* src/pages/About.module.css */
+
+/* 1) .page: keep content centered and set a comfortable max width */
+.page {
+    max-width: 800px;              /* don’t let the page get too wide */
+    margin: 0 auto;                /* center it in the browser */
+    padding: 2rem 1rem;            /* space around the edges */
+    font-family: var(--font-sans); /* use your main site font */
+    color: var(--text-color);      /* use your standard text colour */
+  }
+  
+  /* 2) .header: fade in and centre the title section */
+  .header {
+    text-align: center;            /* centre the heading and intro text */
+    margin-bottom: 2rem;           /* space below before the next section */
+    animation: fadeIn 1s ease-out both; /* smooth fade-in on load */
+  }
+  .title {
+    font-size: 2.5rem;             /* large heading text */
+    margin-bottom: 0.5rem;         /* small gap under the title */
+  }
+  .intro {
+    font-size: 1.1rem;             /* slightly bigger than body text */
+    line-height: 1.6;              /* make paragraphs easy to read */
+  }
+  
+  /* 3) .content: slide up text into place and clear floating images */
+  .content {
+    animation: slideUp 0.8s ease-out both; /* text slides up on load */
+    animation-delay: 0.2s;                /* small delay for nicer pacing */
+    overflow: hidden;                     /* ensures floated images don’t overflow */
+    margin-bottom: 2rem;                  /* space under each text block */
+  }
+  .content p {
+    margin-bottom: 1rem;          /* space between paragraphs */
+    line-height: 1.6;             /* comfortable line spacing */
+  }
+  
+  /* 4) .imageLeft & .imageRight: make both images the same size and float them */
+  .imageLeft,
+  .imageRight {
+    width: 150px;                 /* fixed width so both match */
+    height: 150px;                /* fixed height to keep shape consistent */
+    object-fit: cover;            /* crop images to fill the box */
+    border-radius: 12px;          /* rounded corners for a softer look */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* subtle shadow for depth */
+    animation: fadeIn 1s ease-out both;    /* fade in on load */
+  }
+  .imageLeft {
+    float: left;                  /* send image to the left of the text */
+    margin: 0 1rem 1rem 0;        /* space on right and below the image */
+  }
+  .imageRight {
+    float: right;                 /* send image to the right of the text */
+    margin: 0 0 1rem 1rem;        /* space on left and below the image */
+  }
+  
+  /* 5) .ctaWrapper: centre the “Get in touch” button and fade in */
+  .ctaWrapper {
+    text-align: center;           /* centre the button */
+    margin: 3rem 0 1rem;          /* space above and below */
+    animation: fadeIn 1s ease-out both; /* fade in on load */
+  }
+  .ctaButton {
+    background: var(--highlight); /* bright button background */
+    color: var(--bg-color);       /* contrasting text colour */
+    padding: 0.75rem 1.5rem;      /* comfortable click area */
+    border-radius: 4px;           /* slightly rounded corners */
+    text-decoration: none;        /* remove underline */
+    font-weight: 600;             /* make button text bold */
+    transition: background 0.2s, transform 0.2s; /* smooth hover effects */
+  }
+  .ctaButton:hover {
+    background: #e0b00a;          /* darker shade on hover */
+    transform: translateY(-2px);  /* lift the button slightly */
+  }
+  
+  /* 6) Keyframes for fadeIn: fade from invisible to visible */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* 7) Keyframes for slideUp: slide text from below into place */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  

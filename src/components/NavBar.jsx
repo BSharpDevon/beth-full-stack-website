@@ -41,7 +41,7 @@ export default function NavBar() {
               This <span> is hidden at first.
               On hover, we swap the icon out and show “Let’s connect” instead.
             */}
-            <span className={styles.text}>Let’s connect</span>
+            <span className={styles.text}>LinkedIn</span>
           </a>
 
           {/* 

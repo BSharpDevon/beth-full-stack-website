@@ -1,0 +1,144 @@
+/* src/pages/Contact.module.css */
+
+/* 1) Container: centers the form box both horizontally and vertically with a translucent backdrop */
+.contact {
+    display: flex;                        /* use flexbox for easy centering */
+    justify-content: center;             /* center children horizontally */
+    align-items: center;                 /* center children vertically */
+    min-height: 80vh;                    /* take up most of viewport height */
+    padding: 2rem 1rem;                  /* breathing room around edges */
+    background: rgba(0, 0, 0, 0.5);       /* dark overlay behind the form */
+  }
+  
+  /* 2) Form box: set width to 40% of viewport, limit size, add styling and entry animation */
+  .formWrapper {
+    width: 40vw;                          /* 40% of the browser width */
+    max-width: 600px;                     /* no wider than 600px */
+    min-width: 300px;                     /* no narrower than 300px */
+    background: var(--bg-color);          /* match site background */
+    padding: 2rem;                        /* internal spacing */
+    border-radius: 8px;                   /* rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);/* subtle drop shadow */
+    animation: dropIn 0.8s ease-out both; /* slide-down & fade-in on load */
+  }
+  
+  /* 3) dropIn keyframes: animate from slightly above, scaled down, invisible → final position */
+  @keyframes dropIn {
+    0% {
+      opacity: 0;                         /* start invisible */
+      transform: translateY(-50px) scale(0.95); /* slightly above and smaller */
+    }
+    60% {
+      opacity: 1;                         /* become visible */
+      transform: translateY(10px) scale(1.02);  /* overshoot slightly for bounce */
+    }
+    100% {
+      opacity: 1;                         /* stay visible */
+      transform: translateY(0) scale(1);  /* settle into final position/size */
+    }
+  }
+  
+  /* 4) Heading inside the form */
+  .formWrapper h1 {
+    margin-bottom: 1.5rem;               /* space below the title */
+    text-align: center;                  /* center align the text */
+  }
+  
+  /* 5) Thank-you message styling */
+  .thanks {
+    text-align: center;                  /* center the thank-you text */
+    font-size: 1.1rem;                   /* slightly larger font */
+  }
+  
+  /* 6) Form layout: stack inputs vertically with gaps */
+  .form {
+    display: flex;                       
+    flex-direction: column;              /* one field per row */
+    gap: 1rem;                           /* space between each field */
+  }
+  
+  /* 7) Label grouping: place label text above its field */
+  label {
+    display: flex;                       
+    flex-direction: column;              /* label text on top, input below */
+    font-weight: 600;                    /* make label text bold */
+  }
+  
+  /* 8) Input and textarea styling */
+  input,
+  textarea {
+    margin-top: 0.5rem;                  /* gap between label and field */
+    padding: 0.5rem;                     /* internal padding for fields */
+    border: 2px solid var(--highlight);  /* colored border for focus */
+    border-radius: 4px;                  /* slightly rounded corners */
+    font-family: var(--font-sans);       /* match site font */
+    background: #fff;                    /* white background inside fields */
+    color: #000;                         /* dark text inside fields */
+  }
+  
+  /* 9) Button styling */
+  button {
+    margin-top: 0.5rem;                  /* space above the button */
+    padding: 0.75rem 1.5rem;             /* internal padding for click area */
+    background: var(--highlight);        /* gold background */
+    color: var(--bg-color);              /* dark text */
+    font-family: var(--font-sans);       /* match site font */
+    font-weight: 600;                    
+    border: none;                        /* remove default border */
+    border-radius: 4px;                  /* rounded corners */
+    cursor: pointer;                     /* pointer cursor on hover */
+    transition: background 0.2s, transform 0.2s; /* smooth hover effects */
+  }
+  
+  /* 10) Button hover state */
+  button:hover:not(:disabled) {
+    background: #e0b00a;                 /* slightly darker gold */
+    transform: translateY(-2px);         /* lift button up a bit */
+  }
+  
+  /* 11) Disabled button state */
+  button:disabled {
+    opacity: 0.6;                        /* fade out when disabled */
+    cursor: not-allowed;                 /* show not-allowed cursor */
+  }
+  
+  /* 12) Error message styling */
+  .error {
+    color: #ff6666;                      /* red text for errors */
+    font-weight: 600;                    
+    text-align: center;                  
+  }
+  
+  Floating labels
+  
+  label {
+    position: relative;
+  }
+  label input:focus + .floatLabel,
+  label input:not(:placeholder-shown) + .floatLabel {
+    transform: translateY(-1.5rem) scale(0.85);
+    opacity: 0.8;
+  }
+  .floatLabel {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    pointer-events: none;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+ 
+  
+  /* Input focus glow  */
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(247, 243, 127, 0.4);
+  }
+ 
+  
+  /* Shake on error */
+  
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+  }
