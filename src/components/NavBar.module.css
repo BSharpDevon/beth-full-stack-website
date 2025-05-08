@@ -1,90 +1,76 @@
-/* src/components/NavBar.module.css */
-
-/* The bar at the top of the page */
 .navbar {
-  background-color: #10282A;       /* dark teal background */
-  padding: 1rem 2rem;               /* space inside top/bottom and left/right */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle drop shadow */
+  background-color: #10282A;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Centers and constrains the content inside the navbar */
 .container {
-  max-width: 1140px;                /* don’t stretch wider than this */
-  margin: 0 auto;                   /* center horizontally */
-  display: flex;                    /* place children side by side */
-  justify-content: space-between;   /* push brand to left, links to right */
-  align-items: center;              /* vertically center items */
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Your site name/logo styling */
 .brand {
-  font-family: 'IMFellEnglish', serif; /* fancy serif font */
-  font-size: 1.5rem;                 /* larger text */
-  color: #EEF4F8;                    /* off-white text */
-  text-decoration: none;             /* remove underline */
-  transition: transform 0.2s ease;   /* smooth grow/shrink on hover */
+  font-family: 'IMFellEnglish', serif;
+  font-size: 1.5rem;
+  color: #EEF4F8;
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 .brand:hover {
-  transform: scale(1.1);             /* grow a bit on hover */
-  cursor: pointer;                   /* show pointer cursor */
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-/* Wrapper for all the nav links */
+/* space after the name for LinkedIn icon */
+.socialIcon {
+  margin-left: 0.5rem;
+}
+
 .links {
-  display: flex;                     /* line them up horizontally */
-  gap: 1.5rem;                       /* space between each link */
+  display: flex;
+  gap: 2rem;
 }
 
-/* Base styling for each link/button */
 .link {
-  color: #EEF4F8;                    /* off-white text */
-  font-family: 'Josefin Sans', sans-serif; /* clean sans-serif */
-  font-weight: 600;                  /* semi-bold */
-  text-decoration: none;             /* no underline */
-  position: relative;                /* needed for underline animation */
-  padding: 0.25rem 0;                /* a bit of vertical padding */
-  transition: color 0.2s, transform 0.2s; /* smooth color & lift on hover */
-  display: inline-flex;              /* allow centering icon + text */
-  align-items: center;               /* vertically center icon + text */
+  color: #EEF4F8;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
 }
-
-/* Animated underline effect */
 .link::after {
-  content: '';                       /* empty pseudo-element */
-  position: absolute;                /* positioned relative to .link */
-  left: 0;
-  bottom: 0;
-  height: 2px;                       /* 2px tall line */
-  width: 0%;                         /* start hidden */
-  background: #FFCA0B;               /* gold color */
-  transition: width 0.2s;            /* animate growing underline */
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #FFCA0B;
+  transition: width 0.2s;
 }
-
-/* Hover state for the link: color change + lift + underline */
 .link:hover {
-  color: #FFCA0B;                    /* switch text/icon to gold */
-  transform: translateY(-2px);       /* lift link up slightly */
-  cursor: pointer;                   /* pointer cursor */
+  color: #FFCA0B;
+  transform: translateY(-2px);
 }
 .link:hover::after {
-  width: 100%;                       /* underline expands full width */
+  width: 100%;
 }
 
-/* -- NEW: swap icon ↔ text on hover -- */
-
-/* By default, show the icon */
+/* icon and text swap */
 .icon {
   display: inline-block;
+  font-size: 2rem;
 }
-
-/* By default, hide the text label */
 .text {
   display: none;
+  font-size: 1rem;
 }
-
-/* When you hover the whole link:
-   - hide the icon
-   - show the text */
 .link:hover .icon {
   display: none;
 }
