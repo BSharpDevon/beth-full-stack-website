@@ -31,8 +31,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
-  /* ensure this path matches where you actually store the SVG */
-  background-image: url('/assets/images/background.svg');
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--text-color);
