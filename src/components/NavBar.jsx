@@ -14,7 +14,7 @@ export default function NavBar() {
           <Link to="/" className={styles.brand}>Beth Sharp.</Link> {/* Name acts as home link */}
 
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://linkedin.com/in/beth-sharp"
             target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
             className={`${styles.link} ${styles.socialIcon}`} // Shared link + spacing style
           >
